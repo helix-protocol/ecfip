@@ -14,10 +14,12 @@ import { Badge } from "@/components/ui/badge";
 import { Shield } from "lucide-react";
 import { useStorage, EntityType, getRoleForEntity } from "@/lib/storage";
 import { getCountryDisplay } from "@/lib/country";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [isLoggingIn, setIsLoggingIn] = useState<string | null>(null);
   const storage = useStorage();
+  const router = useRouter();
 
   // Get entities for login (only natural entities)
   const userEntities = Object.values(storage.entities).filter(
@@ -26,13 +28,21 @@ export default function LoginPage() {
 
   const handleQuickLogin = async (entityId: string) => {
     setIsLoggingIn(entityId);
-    const entity = userEntities.find((r) => r.id === entityId);
 
-    // Simulate login process
-    setTimeout(() => {
-      alert(`Successfully logged in as ${entity?.name} (${entity?.id})`);
-      setIsLoggingIn(null);
-    }, 1000);
+    // Navigate to dashboard for Jean-Luc Moreau (BNP Paribas Securities Services)
+    if (entityId === "FR2345678901234") {
+      router.push("/dashboard");
+    } else {
+      // For other users, show a message that their dashboard is not yet implemented
+      setTimeout(() => {
+        alert(
+          `Dashboard for ${
+            userEntities.find((r) => r.id === entityId)?.name
+          } is not yet implemented.`
+        );
+        setIsLoggingIn(null);
+      }, 500);
+    }
   };
 
   return (
