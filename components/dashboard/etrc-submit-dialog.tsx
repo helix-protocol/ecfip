@@ -90,7 +90,8 @@ export function EtrcSubmitDialog({
             Submit eTRC Certificate
           </DialogTitle>
           <DialogDescription>
-            Electronic Tax Relief Certificate submission for dividend payments
+            Electronic Tax Residency Certificate submission for dividend
+            payments
           </DialogDescription>
         </DialogHeader>
 

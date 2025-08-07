@@ -21,8 +21,8 @@ export default function DashboardPage() {
   const reportingTypes = [
     {
       id: "etrc",
-      name: "eTRC (Electronic Tax Relief Certificate)",
-      description: "Submit tax relief certificates for dividend payments",
+      name: "eTRC (Electronic Tax Residency Certificate)",
+      description: "Submit tax residency certificates for dividend payments",
       status: "pending" as const,
       lastSubmitted: "2024-01-15",
       nextDue: "2024-02-15",

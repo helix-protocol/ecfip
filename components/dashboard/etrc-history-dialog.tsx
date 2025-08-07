@@ -141,7 +141,7 @@ export function EtrcHistoryDialog({
             eTRC Submission History
           </DialogTitle>
           <DialogDescription>
-            View all submitted Electronic Tax Relief Certificates and their
+            View all submitted Electronic Tax Residency Certificates and their
             processing status
           </DialogDescription>
         </DialogHeader>
